@@ -6,26 +6,22 @@ If you wanted to set the policy on a folder level and selectively disable it on 
 
 ```hcl
 module "folder-disable-serial-port-access-enforce-with-excludes" {
-  source            = "github.com/terraform-google-modules/terraform-google-org-policy"
-
+  source      = "github.com/terraform-google-modules/terraform-google-org-policy"
   folder_id   = "folders/my-folder-id"
   constraint  = "compute.disableSerialPortAccess"
-  enforce     = "true"
+  enforce     = true
   policy_type = "boolean"
-
   exclude_projects = ["my-project"]
 }
 ```
 
-[^]: (autogen_docs_start)
-
-
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| credentials_file_path | Service account json auth path | string | - | yes |
-| excluded_folder_id | ID of a folder to exclude from the policy | string | - | yes |
-| organization_id | The organization id for putting the policy | string | - | yes |
+| credentials\_file\_path | Service account json auth path | string | n/a | yes |
+| excluded\_folder\_id | ID of a folder to exclude from the policy | string | n/a | yes |
+| organization\_id | The organization id for putting the policy | string | n/a | yes |
 
-[^]: (autogen_docs_end)
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

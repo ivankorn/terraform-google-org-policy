@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # Copyright 2018 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,9 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-
-#!/bin/bash
 
 #################################################################
 #   PLEASE FILL THE VARIABLES WITH VALID VALUES FOR TESTING     #
@@ -87,11 +84,12 @@ function create_main_tf_file() {
   touch main.tf
   cat <<EOF > main.tf
 locals {
-  credentials_file_path    = "$CREDENTIALS_PATH"
+  credentials_file_path = "$CREDENTIALS_PATH"
 }
 
 provider "google" {
-  credentials              = "\${file(local.credentials_file_path)}"
+  version     = "~> 2.5.0"
+  credentials = file(local.credentials_file_path)
 }
 
 module "org-policy-restrict-domain" {

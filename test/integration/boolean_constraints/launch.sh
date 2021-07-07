@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 #################################################################
 #   PLEASE FILL THE VARIABLES WITH VALID VALUES FOR TESTING     #
 #   DO NOT REMOVE/ADD ANY OF THE VARIABLES                      #
@@ -72,11 +71,12 @@ function create_main_tf_file() {
   touch main.tf
   cat <<EOF > main.tf
 locals {
-  credentials_file_path    = "$CREDENTIALS_PATH"
+  credentials_file_path = "$CREDENTIALS_PATH"
 }
 
 provider "google" {
-  credentials              = "\${file(local.credentials_file_path)}"
+  version     = "~> 2.5.0"
+  credentials = file(local.credentials_file_path)
 }
 
 module "org-policy-boolean-project" {

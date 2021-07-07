@@ -3,14 +3,12 @@ This example shows how the boolean constraint policy can be used to explicitly *
 
 It disables enforcement of the `compute.disableSerialPortAccess` constraint on the given project, ensuring that serial port access can be used in the project.
 
-[^]: (autogen_docs_start)
-
-
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| credentials_file_path | Service account json auth path | string | - | yes |
-| project_id | The project ID to apply the policy to | string | - | yes |
+| credentials\_file\_path | Service account json auth path | string | n/a | yes |
+| project\_id | The project ID to apply the policy to | string | n/a | yes |
 
-[^]: (autogen_docs_end)
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
